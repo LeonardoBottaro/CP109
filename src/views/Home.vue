@@ -13,6 +13,31 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+      property:'This is my property',
+      propertyTwo:'ahuahuhau'
+    }
+  },
+  beforeCreate(){
+    console.log("beforeCreated()")
+  },
+  created(){
+    console.log("created()")
+  },
+  beforeMount(){
+    console.log("beforeMount()")
+  },
+  mounted(){
+    console.log("mounted()")
+  },
+  beforeDestroy(){
+    console.log("beforeDestroy()")
+  },
+  destroyed(){
+    console.log("destroyed()")
   }
+  
 }
 </script>
