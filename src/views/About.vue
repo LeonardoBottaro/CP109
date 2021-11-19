@@ -3,6 +3,7 @@
     <h1>{{counter}}</h1>
     <button v-on:click="increment()">Increment</button>
     <button @click="decrease()">Decrease</button>
+    <historico />
   </div>
 </template>
 
@@ -11,6 +12,8 @@
 
 
 <script>
+  import Historico from '../components/Historico'
+
 export default {
   data(){
     return{
@@ -26,6 +29,9 @@ export default {
       console.log("Decrease--")
       this.counter--
     }
-  }
+  },
+  components: {
+      Historico,
+    }
 }
 </script>

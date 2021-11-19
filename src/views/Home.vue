@@ -1,43 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <hello-world />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import HelloWorld from '../components/HelloWorld'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  },
-  data(){
-    return{
-      property:'This is my property',
-      propertyTwo:'ahuahuhau'
+  export default {
+    name: 'Home',
+
+    components: {
+      HelloWorld,
     }
-  },
-  beforeCreate(){
-    console.log("beforeCreated()")
-  },
-  created(){
-    console.log("created()")
-  },
-  beforeMount(){
-    console.log("beforeMount()")
-  },
-  mounted(){
-    console.log("mounted()")
-  },
-  beforeDestroy(){
-    console.log("beforeDestroy()")
-  },
-  destroyed(){
-    console.log("destroyed()")
   }
-  
-}
 </script>
+
+
