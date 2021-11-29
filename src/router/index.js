@@ -22,7 +22,12 @@ const routes = [
     path: '/historico',
     name: 'Historico',
     component: () => import(/* webpackChunkName: "about" */ '../components/Historico.vue')
-  }
+  },
+  {
+    path: '/notas',
+    name: 'Notas',
+    component: () => import(/* webpackChunkName: "about" */ '../components/Notas.vue')
+  },
 ]
 
 const router = new VueRouter({

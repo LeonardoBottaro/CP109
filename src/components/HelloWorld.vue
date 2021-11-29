@@ -47,7 +47,7 @@
             <v-list-item-icon>
               <v-icon>mdi-book-open-blank-variant</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Notas/Faltas</v-list-item-title>
+            <v-list-item-title @click="goToNotas()">Notas/Faltas</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
@@ -55,6 +55,13 @@
               <v-icon>mdi-clipboard-text-clock</v-icon>
             </v-list-item-icon>
             <v-list-item-title @click="goToHistorico()">Historico</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-cards-variant</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title @click="goToCards()">Cards</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -73,8 +80,9 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Bem vindo ao Acesso Academico
+          {{titleview}} ao Acesso Academico
         </h1>
+
 
         <p class="subheading font-weight-regular">
           Para qualquer tipo de assistencia nos procure em qualquer meio de comunicação
@@ -96,7 +104,7 @@
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-4 white--text"
+          class="mx-4 white--text width: 100%"
           icon
         >
           <v-icon size="24px">
@@ -142,6 +150,12 @@
   export default {
     name: 'HelloWorld',
 
+    data2(){
+      return{
+        titleview: this.$store.state.title
+      }
+    },
+
     data: () => ({
       drawer: false,
       group: null,
@@ -158,6 +172,12 @@
       },
     },
     methods:{
+      goToCards(){
+        this.$router.push('/cards')
+      },
+      goToNotas(){
+        this.$router.push('/notas')
+      },
       goToHistorico(){
         this.$router.push('/historico')
       },

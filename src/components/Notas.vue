@@ -71,13 +71,11 @@
     <v-row class="text-center">
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Bem vindo ao Historico
+          Bem vindo as Notas e Faltas
         </h1>
         <p class="subheading font-weight-regular">
-          Bora contar!
+          Bora ver suas Notas!
         </p>
-        <v-btn v-on:click="increment()">Increment</v-btn>
-        <v-btn @click="decrease()">Decrease</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -86,7 +84,7 @@
 
 <script>
   export default {
-    name: 'Historico',
+    name: 'Notas',
 
     data: () => ({
       drawer: false,
