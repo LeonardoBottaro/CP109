@@ -15,6 +15,8 @@ export default new Vuex.Store({
   modules: {
   },
   getters:{
-
+    smallTitle(state){
+      return state.title.toLowerCase()
+    }
   }
 })

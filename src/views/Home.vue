@@ -1,7 +1,8 @@
 <template>
 <div>
   <hello-world />
-  <h1>{{titleview}}</h1>
+  <h1>{{title}}</h1>
+  <v-btn @click="fetch()">FETCH SOMETHING</v-btn>
   <v-row>
       <v-col
         v-for="(data,i) in myCards"
@@ -20,6 +21,7 @@
 <script>
   import HelloWorld from '../components/HelloWorld'
   import MyCard from '../components/MyCard'
+  import axios from 'axios'
 
   export default {
     name: 'Home',
@@ -36,6 +38,17 @@
     computed:{
       myCards(){
         return this.$store.state.cards
+      },
+      title(){
+        return this.$store.getters.smallTitle
+      }
+    },
+    methods:{
+      fetch(){
+        console.log('as') 
+        axios.get['https://agenda-balaguer.herokuapp.com/api/event']
+        .then(res=>{console.log(res)})
+        .catch(err=>{console.log(err)})
       }
     }
   }
