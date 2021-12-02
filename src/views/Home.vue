@@ -1,15 +1,17 @@
 <template>
 <div>
   <hello-world />
+  <h1>{{titleview}}</h1>
   <v-row>
       <v-col
-        v-for="{data,i} in myCards"
+        v-for="(data,i) in myCards"
         :key="i"
         cols="12"
-        sm="4"
+        sm="6"
+        md="4"
+        xs="2"
       >
-      {{i}}
-      <MyCard :cardId="i" :cardInfo=data></MyCard>
+      <MyCard :cardId="i" :cardInfo="data"></MyCard>
       </v-col>
     </v-row>
 </div>
@@ -21,6 +23,11 @@
 
   export default {
     name: 'Home',
+    data(){
+      return{
+        titleview: this.$store.state.title
+      }
+    },
 
     components: {
       HelloWorld,
