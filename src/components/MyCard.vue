@@ -17,7 +17,8 @@
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 
-    <v-card-title>{{cardInfo}}</v-card-title>
+    <v-card-title>{{cardInfo.title}}</v-card-title>
+    <v-card-text>{{cardInfo.description}}</v-card-text>
 
   </v-card>
 </template>
